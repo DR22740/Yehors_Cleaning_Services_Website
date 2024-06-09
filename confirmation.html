@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        .confirmation-container {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .confirmation-header {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+        .confirmation-body {
+            padding: 20px;
+        }
+        .confirmation-footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+        .summary-item {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="bg-light py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="index.html">YCS.com</a>
+                <nav class="d-inline-block">
+                    <a class="nav-link d-inline-block" href="#">Our services</a>
+                    <a class="nav-link d-inline-block" href="#">Buy products</a>
+                    <a class="nav-link d-inline-block" href="#">About</a>
+                    <a class="nav-link d-inline-block" href="#">Support</a>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="container mt-5">
+                <div class="confirmation-container">
+                    <div class="confirmation-header text-center">
+                        <h2>YOUR BOOKING HAS BEEN CONFIRMED!</h2>
+                    </div>
+                    <div class="confirmation-body">
+                        <div class="summary-item">
+                            <p><strong>House Size:</strong> <span id="houseSizeSummary"></span></p>
+                        </div>
+                        <div class="summary-item">
+                            <p><strong>Specific Cleaning Requests:</strong> <span id="specificRequestsSummary"></span></p>
+                        </div>
+                        <div class="summary-item">
+                            <p><strong>Additional Notes:</strong> <span id="additionalNotesSummary"></span></p>
+                        </div>
+                        <div class="summary-item">
+                            <p><strong>Selected Cleaner:</strong> <span id="selectedCleanerSummary"></span></p>
+                        </div>
+                        <div id="timeSelectionsSummary" class="summary-item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="text-center py-4 bg-dark text-white">
+            <p>&copy; All rights reserved</p>
+            <div>
+                <a href="#" class="text-white mx-2">Facebook</a>
+                <a href="#" class="text-white mx-2">Twitter</a>
+                <a href="#" class="text-white mx-2">Instagram</a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="summary.js"></script>
+</body>
+</html>

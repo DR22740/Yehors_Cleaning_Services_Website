@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Cleaning</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">YCS.com</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Our services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Buy products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+                    <li class="nav-item dropdown" id="accountDropdown" style="display: none;">
+                        <a class="nav-link dropdown-toggle" href="#" id="accountDropdownLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdownLink">
+                            <a class="dropdown-item" href="#" id="logoutLink">Log out</a>
+                        </div>
+                    </li>
+                    <li class="nav-item" id="registerLink">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero text-center py-5 bg-light">
+            <div class="container">
+                <h1>Choose your cleaning:</h1>
+                <p>Prices tend to change depending on special requests</p>
+                <div class="btn-group mb-4" role="group" aria-label="Plans">
+                    <button type="button" class="btn btn-outline-secondary">One-time cleaning</button>
+                    <button type="button" class="btn btn-outline-secondary" disabled>Scheduled cleaning (COMING SOON)</button>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Full house cleaning</h5>
+                                <p class="card-text">$5 per square meter</p>
+                                <ul class="list-unstyled">
+                                    <li>Deep clean +5$</li>
+                                    <li>Clutter cleaning + 2$</li>
+                                    <li>Odour removal + 10$</li>
+                                    <li>Special instructions + $</li>
+                                </ul>
+                                <button class="btn btn-outline-success select-cleaning" data-cleaning="full-house">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Room cleaning</h5>
+                                <p class="card-text">$10 per square meter</p>
+                                <ul class="list-unstyled">
+                                    <li>Deep clean +5$</li>
+                                    <li>Clutter cleaning FREE</li>
+                                    <li>Odour removal + 15$</li>
+                                    <li>Special instructions + $</li>
+                                </ul>
+                                <button class="btn btn-outline-success select-cleaning" data-cleaning="room-cleaning">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Specific cleaning</h5>
+                                <p class="card-text">$200 flat fee</p>
+                                <ul class="list-unstyled">
+                                    <li>Cleaning cloths and covers</li>
+                                    <li>Cleaning cars and vehicles</li>
+                                    <li>Cleaning specific surfaces</li>
+                                    <li>Outside cleaning + 15/m^2</li>
+                                </ul>
+                                <button class="btn btn-outline-success select-cleaning" data-cleaning="specific-cleaning">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="details text-center py-5" id="detailsSection" style="display: none;">
+                <div class="container">
+                    <h2>Adjust your cleaning:</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Select your times and dates:</h4>
+                            <p>You can select multiple cleanings for the same day by clicking a "+"</p>
+                            <form id="timeSelectionForm">
+                                <div class="form-group" id="mondayContainer">
+                                    <label for="mondayTime">Monday</label>
+                                    <div class="input-group">
+                                        <select class="form-control time-select" id="mondayTime">
+                                            <option value="">Select time</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary add-time-btn" type="button" data-day="monday">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="tuesdayContainer">
+                                    <label for="tuesdayTime">Tuesday</label>
+                                    <div class="input-group">
+                                        <select class="form-control time-select" id="tuesdayTime">
+                                            <option value="">Select time</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary add-time-btn" type="button" data-day="tuesday">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="wednesdayContainer">
+                                    <label for="wednesdayTime">Wednesday</label>
+                                    <div class="input-group">
+                                        <select class="form-control time-select" id="wednesdayTime">
+                                            <option value="">Select time</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary add-time-btn" type="button" data-day="wednesday">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="thursdayContainer">
+                                    <label for="thursdayTime">Thursday</label>
+                                    <div class="input-group">
+                                        <select class="form-control time-select" id="thursdayTime">
+                                            <option value="">Select time</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary add-time-btn" type="button" data-day="thursday">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="fridayContainer">
+                                    <label for="fridayTime">Friday</label>
+                                    <div class="input-group">
+                                        <select class="form-control time-select" id="fridayTime">
+                                            <option value="">Select time</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary add-time-btn" type="button" data-day="friday">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="saturdayContainer">
+                                    <label for="saturdayTime">Saturday</label>
+                                    <div class="input-group">
+                                        <select class="form-control time-select" id="saturdayTime">
+                                            <option value="">Select time</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary add-time-btn" type="button" data-day="saturday">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="sundayContainer">
+                                    <label for="sundayTime">Sunday</label>
+                                    <div class="input-group">
+                                        <select class="form-control time-select" id="sundayTime">
+                                            <option value="">Select time</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-primary add-time-btn" type="button" data-day="sunday">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h4>Size of the house (square meters total):</h4>
+                            <br>
+                            <select class="form-control" id="houseSize">
+                                <!-- Options will be generated by JavaScript -->
+                            </select>
+                            <br>
+                            
+                            <label for="specificRequests">Specific Cleaning Requests:</label>
+                            <textarea class="form-control" id="specificRequests" rows="4" placeholder="Write any additional cleaning requests which might result in additional pay"></textarea>
+                            <br>
+                            
+                            <label for="additionalNotes">Additional Notes:</label>
+                            <textarea class="form-control" id="additionalNotes" rows="4" placeholder="Write down any additional notes for the cleaner(s) to know while cleaning (no FEE)"></textarea>
+                            <br>
+                            
+                            <label for="employeeName">Select Cleaner:</label>
+                            <select class="form-control" id="employeeName">
+                                <option value="">Select an employee</option>
+                                <!-- Options will be generated by JavaScript -->
+                            </select>
+                            <br>
+                        </div>                   
+                    </div>
+                    <button class="btn btn-primary mt-4" id="checkoutButton">Checkout</button>
+                </div>
+            </section>
+            
+    </main>
+    <footer class="text-center py-4 bg-dark text-white">
+        <p>&copy; All rights reserved</p>
+        <div>
+            <a href="#" class="text-white mx-2">Facebook</a>
+            <a href="#" class="text-white mx-2">Twitter</a>
+            <a href="#" class="text-white mx-2">Instagram</a>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
